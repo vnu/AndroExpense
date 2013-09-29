@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">        #000000</color>
+    <color name="burgundy">        #8C001A</color>
+    <color name="sand">#E7DDC2</color>
+    <color name="insta_blue">#4B8297</color>
+    <color name="twitter_logo">    	#00ACEE    </color>
+    <color name="twitter_verified">        #1dcaff</color>
+    <color name="timeline_bg">        #F0FFFF</color>
+    <color name="white">        #FFFFFF</color>
+    <color name="red">     	#A62A2A    </color>
+    <color name="green">     #215E21    </color>
+    <color name="bar_grey">         #222222</color>
+    <color name="lt_grey">     #D8D8D8 </color>
+    <color name="p_red">     #CD3035 </color>
+    <color name="t_blue">     #1683C6 </color>
+    <color name="d_brown">     #5C3317 </color>
+    <color name="s_orange">     #E56717 </color>
+    
+
+</resources>

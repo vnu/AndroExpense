@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sand"
+    tools:context=".SignupActivity" >
+
+    <TextView
+        android:id="@+id/tvSignupWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etName"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="@string/signup_welcome"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/burgundy" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_name" />
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:background="@color/p_red"
+        android:onClick="onSignup"
+        android:padding="5dp"
+        android:text="@string/signup"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

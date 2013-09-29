@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_c_border"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tvSTransDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:paddingRight="3dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:background="@drawable/blue_gradient"
+        android:textColor="@color/white"
+        android:onClick="onProfileClick"
+        android:text="@string/date" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvSTransVendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Vendor" />
+
+        <TextView
+            android:id="@+id/tvSTransType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="bottom"
+            android:text="Type"
+            android:textSize="@dimen/created_at" />
+    </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvSTransAmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="7dp"
+            android:text="@string/zero_value" />
+
+        <TextView
+            android:id="@+id/tvSTransStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="bottom"
+            android:text="Status"
+            android:textSize="@dimen/created_at" />
+    </LinearLayout>
+
+</LinearLayout>
