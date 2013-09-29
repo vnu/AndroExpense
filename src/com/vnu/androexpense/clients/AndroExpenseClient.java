@@ -41,9 +41,9 @@ public class AndroExpenseClient {
 	public void get_toBePaid(RequestParams params, AsyncHttpResponseHandler handler){
 		client.get(AE_URL + "shared_transactions/to_be_paid.json", params, handler);
 	}
-
-	public void shared_bills() {
-
+	
+	public void get_Overview(RequestParams params, AsyncHttpResponseHandler handler){
+		client.get(AE_URL + "transactions/overview.json", params, handler);
 	}
 
 	public void open_bills() {
@@ -51,14 +51,6 @@ public class AndroExpenseClient {
 	}
 
 	public void closed_bills() {
-
-	}
-
-	public void i_owe() {
-
-	}
-
-	public void iam_owed() {
 
 	}
 
