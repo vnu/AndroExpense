@@ -4,7 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -55,6 +58,7 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		params.put("uid", user.getUserId());
 		params.put("username", username);
 		params.put("name", name);
+		savePreferences("username", username);
 		handler = new AsyncHttpResponseHandler() {
 			@Override
 			public void onSuccess(String response) {
@@ -108,6 +112,15 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 				});
 	}
 	
+	private void savePreferences(String key, String value) {
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		Editor editor = sharedPreferences.edit();
+		editor.putString(key, value);
+		editor.commit();
+	}
+
+
 	
 	@Override
 	protected void onResume() {
