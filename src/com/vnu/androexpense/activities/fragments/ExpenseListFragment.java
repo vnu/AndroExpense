@@ -5,7 +5,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -20,6 +22,7 @@ public class ExpenseListFragment extends TransactionsFragment {
 	RequestParams params;
 	AsyncHttpResponseHandler handler;
 	String type;
+	String username;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,21 +84,30 @@ public class ExpenseListFragment extends TransactionsFragment {
 	
 	public void getExpenses(){
 		params = new RequestParams();
-		params.put("username", "androexp1");
+		loadSavedPreferences();
+		params.put("username", username);
 		AndroExpense.getAndroClient().get_expenses(params, handler);
 	}
 	
 	public void getIncomes(){
 		params = new RequestParams();
-		params.put("username", "androexp1");
+		loadSavedPreferences();
+		params.put("username", username);
 		AndroExpense.getAndroClient().get_incomes(params, handler);
 	}
 	
 	public void getShared(){
 		params = new RequestParams();
-		params.put("username", "androexp1");
+		loadSavedPreferences();
+		params.put("username", username);
 		AndroExpense.getAndroClient().get_shared(params, handler);
 	}
 	
+	private void loadSavedPreferences() {
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this.getActivity());
+		username = sharedPreferences.getString("username", "androexp1");
+
+	}
 
 }
