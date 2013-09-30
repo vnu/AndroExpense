@@ -135,14 +135,9 @@ public class AddFragment extends Fragment {
 			@Override
 			public void onSuccess(JSONObject jsonTransaction){
 				
-				Toast.makeText(getActivity(), "Transaction added", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getActivity(), "Transaction added", Toast.LENGTH_SHORT).show();
 				
-//				if (getParent() == null) {
-//				    setResult(Activity.RESULT_OK);
-//				} else {
-//				    getParent().setResult(Activity.RESULT_OK);
-//				}
-//				finish();
+
 
 			}
 			@Override
@@ -155,13 +150,7 @@ public class AddFragment extends Fragment {
 		
 		
 		return true;
-//		switch (item.getItemId()) {
-//	      case R.id.edit_item:
-//	         // do s.th.
-//	         return true;
-//	      default:
-//	         return super.onOptionsItemSelected(item);
-//	   }
+
 	}
 	
 	private void loadSavedPreferences() {
