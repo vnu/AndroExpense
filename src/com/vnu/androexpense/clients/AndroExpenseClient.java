@@ -10,40 +10,58 @@ public class AndroExpenseClient {
 	private static AndroExpenseClient expenseClient = null;
 	AsyncHttpClient client = new AsyncHttpClient();
 	public static final String AE_URL = "http://10.0.2.2:3000/";
-//	public static final String AE_URL = "http://androexpense.herokuapp.com/";
+	// public static final String AE_URL = "http://androexpense.herokuapp.com/";
 	public static final String TAG = "AndroExpenseClient";
 
-	
 	public void signin(RequestParams params, AsyncHttpResponseHandler handler) {
 		client.post(AE_URL + "users.json", params, handler);
-		
+
 	}
-	
-	public void get_transactions(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_transactions(RequestParams params,
+			AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "transactions.json", params, handler);
 	}
-	
-	public void get_expenses(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_expenses(RequestParams params,
+			AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "transactions/expenses.json", params, handler);
 	}
-	
-	public void get_incomes(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_incomes(RequestParams params,
+			AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "transactions/incomes.json", params, handler);
 	}
-	
-	public void get_shared(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_shared(RequestParams params,
+			AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "shared_transactions/shared.json", params, handler);
 	}
-	public void get_toPay(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_toPay(RequestParams params, AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "shared_transactions/to_pay.json", params, handler);
 	}
-	
-	public void get_toBePaid(RequestParams params, AsyncHttpResponseHandler handler){
-		client.get(AE_URL + "shared_transactions/to_be_paid.json", params, handler);
+
+	public void get_toBePaid(RequestParams params,
+			AsyncHttpResponseHandler handler) {
+		client.get(AE_URL + "shared_transactions/to_be_paid.json", params,
+				handler);
 	}
-	
-	public void get_Overview(RequestParams params, AsyncHttpResponseHandler handler){
+
+	public void get_Overview(RequestParams params,
+			AsyncHttpResponseHandler handler) {
 		client.get(AE_URL + "transactions/overview.json", params, handler);
+	}
+
+	public void pay_bill(RequestParams params, AsyncHttpResponseHandler handler) {
+		client.post(AE_URL + "shared_transactions/pay_bill.json", params,
+				handler);
+	}
+
+	public void confirm_payment(RequestParams params,
+			AsyncHttpResponseHandler handler) {
+		client.post(AE_URL + "shared_transactions/confirm_payment.json",
+				params, handler);
 	}
 
 	public void open_bills() {
@@ -72,7 +90,7 @@ public class AndroExpenseClient {
 
 	public static AndroExpenseClient getInstance(
 			Class<AndroExpenseClient> class1, Context context) {
-		if(expenseClient == null){
+		if (expenseClient == null) {
 			expenseClient = new AndroExpenseClient();
 		}
 		return expenseClient;

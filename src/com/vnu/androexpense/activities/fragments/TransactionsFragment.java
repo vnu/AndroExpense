@@ -35,11 +35,8 @@ public class TransactionsFragment extends SherlockFragment {
 		lvTrans = (ListView) v.findViewById(R.id.lvTransactions);
 		trans = new ArrayList<Transaction>();
 		transAdap = new TransactionAdapter(getActivity(), trans);
-		lvTrans.setAdapter(new SlideExpandableListAdapter(
-                transAdap,
-                R.id.llTrans,
-                R.id.expandable
-            ));
+		lvTrans.setAdapter(new SlideExpandableListAdapter(transAdap,
+				R.id.llTrans, R.id.expandable));
 		return v;
 	}
 	

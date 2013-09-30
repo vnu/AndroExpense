@@ -38,10 +38,10 @@ public class SharedListFragment extends STransactionFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		
+
 		loadSavedPreferences();
 		params.put("username", username);
-		
+
 		if (type.equalsIgnoreCase("Income")) {
 			getToBePaid();
 		} else if (type.equalsIgnoreCase("Expense")) {

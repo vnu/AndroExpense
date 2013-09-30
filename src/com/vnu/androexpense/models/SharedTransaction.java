@@ -44,6 +44,8 @@ public class SharedTransaction extends Model implements Serializable {
 	private String status;
 	@Column(name = "expense")
 	private Boolean expense;
+	@Column(name = "action")
+	private String action;
 
 	public int getSt_id() {
 		return st_id;
@@ -125,6 +127,14 @@ public class SharedTransaction extends Model implements Serializable {
 		this.expense = expense;
 	}
 
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
 	public String getStringDate() {
 		DateFormat df = new SimpleDateFormat("MMM dd", Locale.US);
 		String tvDate = df.format(this.date);
@@ -147,9 +157,10 @@ public class SharedTransaction extends Model implements Serializable {
 			this.setPayee(jo.getString("payee"));
 			this.setStatus(jo.getString("status"));
 			this.setNotes(jo.getString("notes"));
+			this.setAction(jo.getString("action"));
 			this.setExpense(jo.getBoolean("expense"));
-			this.setDate(new Date());
-//			this.setDate(getJsonDate(jo.getString("trans_date")));
+//			this.setDate(new Date());
+			this.setDate(getJsonDate(jo.getString("trans_date")));
 
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -181,7 +192,7 @@ public class SharedTransaction extends Model implements Serializable {
 
 	public Date getJsonDate(String jsonDate) {
 		SimpleDateFormat sdf = new SimpleDateFormat(
-				"yyyy-MM-dd'T'HH:mm:ss.Z", Locale.US);
+				"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
 		Date date = null;
 		try {
 			date = sdf.parse(jsonDate);

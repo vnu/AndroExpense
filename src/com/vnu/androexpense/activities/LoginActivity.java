@@ -26,7 +26,7 @@ import com.vnu.androexpense.clients.TwitterClient;
 import com.vnu.androexpense.models.User;
 
 public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
-	
+
 	protected static final String TAG = "Login Activity";
 	Button btnSignin;
 	LinearLayout llLoading;
@@ -50,8 +50,8 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
-	
-	public void setProfileInfo(User user){
+
+	public void setProfileInfo(User user) {
 		params = new RequestParams();
 		username = user.getScreenName();
 		name = user.getName();
@@ -70,30 +70,29 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 				}
 				next_step(status);
 			}
-			
+
 			@Override
 			public void onFailure(Throwable arg0, String arg1) {
 				super.onFailure(arg0, arg1);
 			}
 		};
 	}
-	
-	public void next_step(String status){
-		if(status.equalsIgnoreCase("signup")){
+
+	public void next_step(String status) {
+		if (status.equalsIgnoreCase("signup")) {
 			Intent signup = new Intent(this, SignupActivity.class);
-			signup.putExtra("username",username);
+			signup.putExtra("username", username);
 			signup.putExtra("name", name);
 			signup.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(signup);
 			finish();
-		}else{
+		} else {
 			loginToExpense();
 		}
-			
-		
+
 	}
-	
+
 	private void getProfileInfo() {
 		AndroExpense.getRestClient().getUserInfo(null,
 				new JsonHttpResponseHandler() {
@@ -107,11 +106,12 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 					@Override
 					public void onFailure(Throwable error, String content) {
 						Log.e("Failed", content);
-						Toast.makeText(getApplicationContext(), "OOPs", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "OOPs",
+								Toast.LENGTH_LONG).show();
 					}
 				});
 	}
-	
+
 	private void savePreferences(String key, String value) {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -120,25 +120,23 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		editor.commit();
 	}
 
-
-	
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
 		setUpViews();
-		if(getClient().isAuthenticated()){
+		if (getClient().isAuthenticated()) {
 			btnSignin.setVisibility(View.INVISIBLE);
 			llLoading.setVisibility(View.VISIBLE);
 			getProfileInfo();
 		}
-//		loginToExpense();
-		
+		// loginToExpense();
+
 	}
-	
-	public void setUpViews(){
-		btnSignin = (Button)findViewById(R.id.btnSignin);
-		llLoading = (LinearLayout)findViewById(R.id.llLoading);
+
+	public void setUpViews() {
+		btnSignin = (Button) findViewById(R.id.btnSignin);
+		llLoading = (LinearLayout) findViewById(R.id.llLoading);
 	}
 
 	/*
@@ -152,12 +150,13 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 	 */
 	@Override
 	public void onLoginSuccess() {
-		//Add Spinner, Make another Async Call to get Info, pass to andro tweet and then show sign up or sign in
-		
+		// Add Spinner, Make another Async Call to get Info, pass to andro tweet
+		// and then show sign up or sign in
+
 		getProfileInfo();
 	}
-	
-	public void loginToExpense(){
+
+	public void loginToExpense() {
 		Intent login = new Intent(this, OverviewActivity.class);
 		login.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 				| Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -169,7 +168,8 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 	// i.e Display an error dialog or toast
 	@Override
 	public void onLoginFailure(Exception e) {
-		Toast.makeText(this, "Login Failed. Please Try Again", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, "Login Failed. Please Try Again",
+				Toast.LENGTH_LONG).show();
 		e.printStackTrace();
 	}
 

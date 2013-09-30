@@ -5,7 +5,6 @@ import android.os.Bundle;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.vnu.androexpense.R;
-import com.vnu.androexpense.R.layout;
 
 public class ExpenseListActivity extends SherlockFragmentActivity {
 
@@ -14,7 +13,7 @@ public class ExpenseListActivity extends SherlockFragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_expense_list);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.vnu.androexpense.R;
@@ -15,7 +17,8 @@ import com.vnu.androexpense.models.SharedTransaction;
 
 public class SharedTransactionAdapter extends ArrayAdapter<SharedTransaction> {
 
-	public SharedTransactionAdapter(Context context, List<SharedTransaction> tran) {
+	public SharedTransactionAdapter(Context context,
+			List<SharedTransaction> tran) {
 		super(context, 0, tran);
 	}
 
@@ -37,7 +40,10 @@ public class SharedTransactionAdapter extends ArrayAdapter<SharedTransaction> {
 				.findViewById(R.id.tvSTransVendor);
 		TextView tvTransType = (TextView) view.findViewById(R.id.tvSTransType);
 		TextView tvTransAmt = (TextView) view.findViewById(R.id.tvSTransAmt);
-		TextView tvTransStatus = (TextView) view.findViewById(R.id.tvSTransStatus);
+		TextView tvTransStatus = (TextView) view
+				.findViewById(R.id.tvSTransStatus);
+		EditText etAcnt = (EditText) view.findViewById(R.id.etAcnt);
+		Button tvSTransAction = (Button) view.findViewById(R.id.tvSTransAction);
 
 		// Now set the values
 		tvTransDate.setText(t.getStringDate());
@@ -46,22 +52,28 @@ public class SharedTransactionAdapter extends ArrayAdapter<SharedTransaction> {
 		int color;
 		if (type) {
 			color = Color.parseColor("#CD3035");
-		}else{
+		} else {
 			color = Color.parseColor("#215E21");
 		}
-		
+
 		String stype = t.getPayer();
-		if(stype.equalsIgnoreCase("You")){
+		if (stype.equalsIgnoreCase("You")) {
 			stype = t.getPayee() + " Owes";
-		}else{
+		} else {
 			stype = "Pay " + t.getPayer();
 		}
 		tvTransVendor.setText(t.getVendor());
 		tvTransType.setText(stype);
 		tvTransType.setTextColor(color);
-		tvTransAmt.setText("$ "+t.getAmount().toString());
+		tvTransAmt.setText("$ " + t.getAmount().toString());
 		tvTransAmt.setTextColor(color);
 		tvTransStatus.setText(t.getStatus());
+		String action = t.getAction();
+		tvSTransAction.setText(action);
+		if (action.equalsIgnoreCase("Confirm")) {
+			etAcnt.setVisibility(View.VISIBLE);
+		}
+		tvSTransAction.setTag(t.getSt_id());
 
 		return view;
 	}

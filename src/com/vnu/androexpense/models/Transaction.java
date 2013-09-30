@@ -122,7 +122,7 @@ public class Transaction extends Model implements Serializable {
 			this.setTrans_id(jo.getInt("id"));
 			this.setNotes(jo.getString("notes"));
 			this.setUsername(jo.getString("user"));
-//			this.setDate(new Date());
+			// this.setDate(new Date());
 			this.setDate(getJsonDate(jo.getString("trans_date")));
 
 		} catch (JSONException e) {
@@ -156,7 +156,7 @@ public class Transaction extends Model implements Serializable {
 	public Date getJsonDate(String jsonDate) {
 		SimpleDateFormat sdf = new SimpleDateFormat(
 				"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
-		//2013-09-29T00:00:00.000Z
+		// 2013-09-29T00:00:00.000Z
 		Date date = null;
 		try {
 			date = sdf.parse(jsonDate);

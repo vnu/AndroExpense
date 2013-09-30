@@ -12,8 +12,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_margin="5dp"
-        android:onClick="showExpenseList"
         android:background="@drawable/round_c_border"
+        android:onClick="showExpenseList"
         android:orientation="horizontal"
         android:padding="15dp" >
 
@@ -22,19 +22,19 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/red"
             android:text="@string/expense"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
 
         <TextView
             android:id="@+id/tvExpenseAmtOv"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/red"
             android:gravity="right"
             android:text="@string/zero_value"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,9 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/llExpenseOv"
-        android:onClick="showIncomeList"
         android:layout_margin="5dp"
         android:background="@drawable/round_c_border"
+        android:onClick="showIncomeList"
         android:orientation="horizontal"
         android:padding="15dp" >
 
@@ -54,9 +54,9 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/green"
             android:text="@string/income"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/green" />
 
         <TextView
             android:id="@+id/tvIncomeAmtOv"
@@ -64,19 +64,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:textColor="@color/green"
             android:text="@string/zero_value"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/green" />
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/llSharedOv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llIncomeOv"
         android:layout_margin="5dp"
-        android:onClick="showSharedList"
         android:background="@drawable/round_c_border"
+        android:onClick="showSharedList"
         android:orientation="horizontal"
         android:padding="15dp" >
 
@@ -85,19 +85,19 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/s_orange"
             android:text="@string/shared"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/s_orange" />
 
         <TextView
             android:id="@+id/tvSharedAmtOv"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/s_orange"
             android:gravity="right"
             android:text="@string/zero_value"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/s_orange" />
     </LinearLayout>
 
     <LinearLayout
@@ -106,9 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/llSharedOv"
-        android:onClick="showPayeeList"
         android:layout_margin="5dp"
         android:background="@drawable/round_c_border"
+        android:onClick="showPayeeList"
         android:orientation="horizontal"
         android:padding="15dp" >
 
@@ -118,18 +118,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/you_owe"
-            android:textColor="@color/red"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
 
         <TextView
             android:id="@+id/tvYouOweAmtOv"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/red"
             android:gravity="right"
             android:text="@string/zero_value"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
     </LinearLayout>
 
     <LinearLayout
@@ -138,9 +138,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/llYouOweOv"
-        android:onClick="showPayerList"
         android:layout_margin="5dp"
         android:background="@drawable/round_c_border"
+        android:onClick="showPayerList"
         android:orientation="horizontal"
         android:padding="15dp" >
 
@@ -148,20 +148,20 @@
             android:id="@+id/tvOthersOweOv"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:textColor="@color/green"
             android:layout_weight="1"
             android:text="@string/others_owe"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/green" />
 
         <TextView
             android:id="@+id/tvOthersOweAmtOv"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:textColor="@color/green"
             android:layout_weight="1"
             android:gravity="right"
             android:text="@string/zero_value"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/green" />
     </LinearLayout>
 
 </RelativeLayout>

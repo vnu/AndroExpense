@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/s_tr"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/round_c_border"
@@ -51,6 +52,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llTrans"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
@@ -83,9 +85,24 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="right"
+        android:onClick="setValues"
         android:orientation="horizontal" >
 
-        <TextView
+        <EditText
+            android:id="@+id/etAcnt"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter Amount"
+            android:paddingRight="10dp"
+            android:visibility="gone" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
             android:id="@+id/tvSTransAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,7 +111,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/round_small_border"
-            android:onClick="onProfileClick"
+            android:onClick="onAction"
             android:paddingBottom="3dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
