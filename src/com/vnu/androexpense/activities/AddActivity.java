@@ -2,18 +2,19 @@ package com.vnu.androexpense.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.vnu.androexpense.R;
 import com.vnu.androexpense.activities.fragments.AddFragment;
 import com.vnu.androexpense.activities.fragments.AddMoreExpenseFragment;
 
-public class AddActivity extends SherlockFragmentActivity {
+public class AddActivity extends FragmentActivity {
 
 	TextView tvToggle;
 	TextView tvVendor;
@@ -88,5 +89,10 @@ public class AddActivity extends SherlockFragmentActivity {
 		}
 
 	}
-
+	
+	public void onAdd(View v){
+		FragmentManager fm = getSupportFragmentManager();
+		AddFragment f = (AddFragment) fm.findFragmentById(R.id.add_frame_container);
+		f.onAdd();
+	}
 }

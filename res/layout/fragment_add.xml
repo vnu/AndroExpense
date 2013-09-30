@@ -2,19 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    >
+    android:background="@drawable/round_c_border"
+    android:orientation="vertical"
+    android:padding="10dp" >
 
- <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:background="@drawable/round_c_border"
-        android:padding="5dp">
+        android:orientation="horizontal"
+        android:paddingBottom="10dp" >
 
         <TextView
             android:id="@+id/tvAmount"
-            android:layout_width="110dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="@string/amount"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -30,18 +30,16 @@
             <requestFocus />
         </EditText>
     </LinearLayout>
-    
- 	<LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:background="@drawable/round_c_border"
-        android:padding="5dp"
-        >
+        android:orientation="horizontal"
+        android:paddingBottom="10dp" >
 
         <TextView
             android:id="@+id/tvVendor"
-            android:layout_width="110dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="@string/payee"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -55,17 +53,15 @@
         </EditText>
     </LinearLayout>
 
-   
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:background="@drawable/round_c_border"
-        android:padding="5dp">
+        android:orientation="horizontal"
+        android:paddingBottom="10dp" >
 
         <TextView
             android:id="@+id/tvDate"
-            android:layout_width="110dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="@string/date"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -77,20 +73,19 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/value_here"
-            android:inputType="date" >"res/layout/fragment_add.xml"
+            android:inputType="date" >
         </EditText>
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:background="@drawable/round_c_border"
-        android:padding="5dp">
+        android:orientation="horizontal"
+        android:paddingBottom="10dp" >
 
         <TextView
             android:id="@+id/tvAccount"
-            android:layout_width="110dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="@string/account"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -103,8 +98,5 @@
             android:hint="@string/value_here" >
         </EditText>
     </LinearLayout>
-    
-
-    
 
 </LinearLayout>

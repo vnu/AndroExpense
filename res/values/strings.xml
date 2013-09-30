@@ -33,8 +33,8 @@
     <string name="notes">Notes</string>
     <string name="account">Account</string>
     <string name="category">Category</string>
-    <string name="payee">Payee</string>
-    <string name="payer">Payer</string>
+    <string name="payee">Vendor</string>
+    <string name="payer">Source</string>
     <string name="paymentMode">Mode</string>
     <string name="title_activity_add">AddActivity</string>
     <string name="ExpenseLabel">Expense</string>
@@ -42,8 +42,11 @@
     <string name="transactionSubmit">Submit</string>
 	<string name="more">More</string>
 	<string name="less">Less</string>
-	<string name="friends_email">Share your expense</string>
-	<string name="hint_friends_email">Enter your friends email</string>
+	<string name="share_expenses">Share</string>
+	<string name="hint_friends_email">Enter Friends Emails</string>
+	<string name="enter_email">Eg., a@gmail.com, b@gmail.com</string>
+	<string name="pay">Pay</string>
+	<string name="add">Add</string>
     
 
 </resources>

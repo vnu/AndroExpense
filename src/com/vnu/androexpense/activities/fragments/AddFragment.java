@@ -2,10 +2,10 @@ package com.vnu.androexpense.activities.fragments;
 
 import org.json.JSONObject;
 
-import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class AddFragment extends Fragment {
 	RadioGroup rgTransaction;
 	TextView tvVendor;
 	TextView tvToggle;
-	MenuItem submit;
+//	MenuItem submit;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,7 +87,7 @@ public class AddFragment extends Fragment {
 					}
 				});
 
-		submit = (MenuItem) getActivity().findViewById(R.id.transaction_submit);
+//		submit = (MenuItem) getActivity().findViewById(R.id.transaction_submit);
 
 	}
 
@@ -108,6 +109,13 @@ public class AddFragment extends Fragment {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		
+
+		return true;
+
+	}
+	
+	public void onAdd(){
 		loadSavedPreferences();
 		setupViews();
 		String amount = etAmount.getText().toString();
@@ -148,9 +156,7 @@ public class AddFragment extends Fragment {
 					}
 
 				});
-
-		return true;
-
+		
 	}
 
 	private void loadSavedPreferences() {

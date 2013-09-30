@@ -127,12 +127,12 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		// TODO Auto-generated method stub
 		super.onResume();
 		setUpViews();
-		if(getClient().isAuthenticated()){
-			btnSignin.setVisibility(View.INVISIBLE);
-			llLoading.setVisibility(View.VISIBLE);
-			getProfileInfo();
-		}
-//		loginToExpense();
+//		if(getClient().isAuthenticated()){
+//			btnSignin.setVisibility(View.INVISIBLE);
+//			llLoading.setVisibility(View.VISIBLE);
+//			getProfileInfo();
+//		}
+		loginToExpense();
 		
 	}
 	
