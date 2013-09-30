@@ -69,6 +69,17 @@ public class AndroExpenseClient {
 	public void new_account() {
 
 	}
+	
+	 public void postTransaction( RequestParams params, AsyncHttpResponseHandler responseHandler) {
+		  String url = "transactions.json" ;
+		  client.post(AE_URL + url, params, responseHandler);
+	 }
+	  
+	  
+	  
+//	  private static String getAbsoluteUrl(String relativeUrl) {
+//	      return BASE_URL + relativeUrl;
+//	  }
 
 	public static AndroExpenseClient getInstance(
 			Class<AndroExpenseClient> class1, Context context) {

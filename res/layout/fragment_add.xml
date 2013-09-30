@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etAmount"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/value_here"
+            android:inputType="numberDecimal" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    
+ 	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tvVendor"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/payee"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etVendor"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/value_here" >
+        </EditText>
+    </LinearLayout>
+
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/value_here"
+            android:inputType="date" >"res/layout/fragment_add.xml"
+        </EditText>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/account"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etAccount"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/value_here" >
+        </EditText>
+    </LinearLayout>
+    
+
+    
+
+</LinearLayout>

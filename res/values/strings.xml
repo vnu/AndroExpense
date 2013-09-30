@@ -27,5 +27,23 @@
     <string name="title_activity_expense_list">ExpenseListActivity</string>
     <string name="date">Date</string>
     <string name="title_activity_shared_list">SharedListActivity</string>
+    
+    <string name="value_here">Enter Value here</string>
+    <string name="amount">Amount</string>
+    <string name="notes">Notes</string>
+    <string name="account">Account</string>
+    <string name="category">Category</string>
+    <string name="payee">Payee</string>
+    <string name="payer">Payer</string>
+    <string name="paymentMode">Mode</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="ExpenseLabel">Expense</string>
+    <string name="IncomeLabel">Income</string>
+    <string name="transactionSubmit">Submit</string>
+	<string name="more">More</string>
+	<string name="less">Less</string>
+	<string name="friends_email">Share your expense</string>
+	<string name="hint_friends_email">Enter your friends email</string>
+    
 
 </resources>
