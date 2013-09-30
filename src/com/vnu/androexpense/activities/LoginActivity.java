@@ -158,7 +158,7 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 	}
 	
 	public void loginToExpense(){
-		Intent login = new Intent(this, OverviewActivity.class);
+		Intent login = new Intent(this, AddActivity.class);
 		login.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 				| Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(login);
