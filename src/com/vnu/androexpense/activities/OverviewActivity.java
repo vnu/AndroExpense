@@ -5,8 +5,9 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ public class OverviewActivity extends Activity {
 	TextView tvYouOweAmtOv;
 	TextView tvSharedAmtOv;
 	TextView tvIncomeAmtOv;
+	String username;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +68,11 @@ public class OverviewActivity extends Activity {
 		tvSharedAmtOv = (TextView) findViewById(R.id.tvSharedAmtOv);
 		tvYouOweAmtOv = (TextView) findViewById(R.id.tvYouOweAmtOv);
 		tvOthersOweAmtOv = (TextView) findViewById(R.id.tvOthersOweAmtOv);
+		
+		loadSavedPreferences();
 
 		params = new RequestParams();
-		params.put("username", "androexp1");
+		params.put("username", username);
 		handler = new AsyncHttpResponseHandler() {
 			@Override
 			public void onSuccess(String response) {
@@ -99,7 +103,6 @@ public class OverviewActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_logout:
-			Log.e("Came here", "Logout");
 			AndroExpense.getRestClient().clearAccessToken();
 			Intent logout = new Intent(this, LoginActivity.class);
 			logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -151,6 +154,13 @@ public class OverviewActivity extends Activity {
 	public void showSharedList(View v) {
 		type = "Shared";
 		showSharedActivity();
+	}
+	
+	private void loadSavedPreferences() {
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		username = sharedPreferences.getString("username", "androexp1");
+
 	}
 
 }

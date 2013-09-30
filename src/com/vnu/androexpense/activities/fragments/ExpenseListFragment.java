@@ -23,6 +23,8 @@ public class ExpenseListFragment extends TransactionsFragment {
 	AsyncHttpResponseHandler handler;
 	String type;
 	String username;
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,9 +39,10 @@ public class ExpenseListFragment extends TransactionsFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		Log.e("type",type);
+		loadSavedPreferences();
+		params.put("username", username);
+
 		if(type.equalsIgnoreCase("Income")){
-			Log.e("type",type);
 			getIncomes();
 		}else if(type.equalsIgnoreCase("Expense")){
 			getExpenses();
@@ -83,23 +86,14 @@ public class ExpenseListFragment extends TransactionsFragment {
 	}
 	
 	public void getExpenses(){
-		params = new RequestParams();
-		loadSavedPreferences();
-		params.put("username", username);
 		AndroExpense.getAndroClient().get_expenses(params, handler);
 	}
 	
 	public void getIncomes(){
-		params = new RequestParams();
-		loadSavedPreferences();
-		params.put("username", username);
 		AndroExpense.getAndroClient().get_incomes(params, handler);
 	}
 	
 	public void getShared(){
-		params = new RequestParams();
-		loadSavedPreferences();
-		params.put("username", username);
 		AndroExpense.getAndroClient().get_shared(params, handler);
 	}
 	

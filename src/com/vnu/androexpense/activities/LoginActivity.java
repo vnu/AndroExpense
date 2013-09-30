@@ -127,12 +127,12 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		// TODO Auto-generated method stub
 		super.onResume();
 		setUpViews();
-//		if(getClient().isAuthenticated()){
-//			btnSignin.setVisibility(View.INVISIBLE);
-//			llLoading.setVisibility(View.VISIBLE);
-//			getProfileInfo();
-//		}
-		loginToExpense();
+		if(getClient().isAuthenticated()){
+			btnSignin.setVisibility(View.INVISIBLE);
+			llLoading.setVisibility(View.VISIBLE);
+			getProfileInfo();
+		}
+//		loginToExpense();
 		
 	}
 	
@@ -158,7 +158,6 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 	}
 	
 	public void loginToExpense(){
-		Log.e("Cem back","here");
 		Intent login = new Intent(this, OverviewActivity.class);
 		login.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 				| Intent.FLAG_ACTIVITY_NEW_TASK);
