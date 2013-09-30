@@ -16,9 +16,7 @@ import android.widget.TextView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.vnu.androexpense.AndroExpense;
-import com.vnu.androexpense.ExpenseListActivity;
 import com.vnu.androexpense.R;
-import com.vnu.androexpense.SharedListActivity;
 
 public class OverviewActivity extends Activity {
 

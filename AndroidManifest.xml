@@ -54,11 +54,11 @@
             android:label="@string/title_activity_signup" >
         </activity>
         <activity
-            android:name="com.vnu.androexpense.ExpenseListActivity"
+            android:name="com.vnu.androexpense.activities.ExpenseListActivity"
             android:label="@string/title_activity_expense_list" >
         </activity>
         <activity
-            android:name="com.vnu.androexpense.SharedListActivity"
+            android:name="com.vnu.androexpense.activities.SharedListActivity"
             android:label="@string/title_activity_shared_list" >
         </activity>
     </application>

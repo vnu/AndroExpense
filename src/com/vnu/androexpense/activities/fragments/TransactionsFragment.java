@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.tjerkw.slideexpandable.library.SlideExpandableListAdapter;
 import com.vnu.androexpense.R;
 import com.vnu.androexpense.adapters.TransactionAdapter;
 import com.vnu.androexpense.models.Transaction;
@@ -34,7 +35,11 @@ public class TransactionsFragment extends SherlockFragment {
 		lvTrans = (ListView) v.findViewById(R.id.lvTransactions);
 		trans = new ArrayList<Transaction>();
 		transAdap = new TransactionAdapter(getActivity(), trans);
-		lvTrans.setAdapter(transAdap);
+		lvTrans.setAdapter(new SlideExpandableListAdapter(
+                transAdap,
+                R.id.llTrans,
+                R.id.expandable
+            ));
 		return v;
 	}
 	

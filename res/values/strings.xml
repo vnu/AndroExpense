@@ -27,5 +27,9 @@
     <string name="title_activity_expense_list">ExpenseListActivity</string>
     <string name="date">Date</string>
     <string name="title_activity_shared_list">SharedListActivity</string>
+    <string name="pay">Pay</string>
+    <string name="progress">Progress</string>
+    <string name="confirm">Confirm</string>
+    <string name="closed">Closed</string>
 
 </resources>

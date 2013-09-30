@@ -17,6 +17,7 @@
     <color name="t_blue">     #1683C6 </color>
     <color name="d_brown">     #5C3317 </color>
     <color name="s_orange">     #E56717 </color>
+    <color name="l_orange">#CC6633</color>
     
 
 </resources>

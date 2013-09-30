@@ -3,74 +3,111 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/round_c_border"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tvTransDate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|left"
-        android:paddingRight="3dp"
-        android:paddingLeft="3dp"
-        android:paddingTop="1dp"
-        android:paddingBottom="1dp"
-        android:background="@drawable/blue_gradient"
-        android:textColor="@color/white"
-        android:onClick="onProfileClick"
-        android:text="@string/date" />
-
-    <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:gravity="left"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/tvTransVendor"
+            android:id="@+id/tvTransDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Vendor" />
+            android:layout_gravity="center|left"
+            android:background="@drawable/blue_gradient"
+            android:onClick="onProfileClick"
+            android:paddingBottom="1dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="1dp"
+            android:text="@string/date"
+            android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/tvTransType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:gravity="bottom"
-            android:text="Type"
-            android:textSize="@dimen/created_at" />
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTransVendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Vendor" />
+
+            <TextView
+                android:id="@+id/tvTransType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="bottom"
+                android:text="Type"
+                android:textSize="@dimen/created_at" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTrans"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTransAmt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="7dp"
+                android:text="@string/zero_value" />
+
+            <TextView
+                android:id="@+id/tvTransAcnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"
+                android:gravity="bottom"
+                android:text="Account"
+                android:textSize="@dimen/created_at" />
+        </LinearLayout>
+
+        <!-- this is the expandable view that is initially hidden and will slide out when the more button is pressed -->
+
     </LinearLayout>
-    
 
     <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginRight="10dp"
+        android:id="@+id/expandable"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:gravity="right"
-        android:orientation="vertical" >
-
+        android:orientation="horizontal" >
+        
         <TextView
-            android:id="@+id/tvTransAmt"
+            android:id="@+id/tvTransAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="7dp"
-            android:text="@string/zero_value" />
+            android:layout_gravity="center|right"
+            android:onClick="onProfileClick"
+            android:background="@drawable/round_small_border"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/pay"
+            android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/tvTransAcnt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="5dp"
-            android:gravity="bottom"
-            android:text="Account"
-            android:textSize="@dimen/created_at" />
+        <!-- put whatever you want in the expandable view -->
+
     </LinearLayout>
 
 </LinearLayout>
