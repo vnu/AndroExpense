@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/sand"
+    tools:context=".AddActivity" >
+
+ 
+
+        <RadioGroup
+            android:id="@+id/rgTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+             >
+
+            <RadioButton
+                android:id="@+id/rbExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/ExpenseLabel" />
+
+            <RadioButton
+                android:id="@+id/rbIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/IncomeLabel" />
+
+        </RadioGroup>
+
+   
+
+    <FrameLayout
+        android:id="@+id/add_frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/rgTransaction"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+         >
+
+    </FrameLayout>
+    
+    <TextView
+            android:id="@+id/tvToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:clickable="true"
+            android:onClick="toggleFormVisibility"
+            android:layout_below="@+id/add_frame_container"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/blue_gradient"
+        	android:textColor="@color/white"/>
+    
+     <FrameLayout
+        android:id="@+id/add_more_frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" 
+        android:visibility="invisible"
+        android:layout_below="@+id/tvToggle"
+        >
+
+    </FrameLayout>
+    
+   <!--  </LinearLayout> -->
+    
+
+</RelativeLayout>
